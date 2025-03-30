@@ -82,7 +82,7 @@ local label02=ui.Label(win, Referencia_Apa , (ancho/2)-200,300)
 label02:show()
 label02.cursor="arrow"
 label02.font="Roboto"
-   --Use cursive in Title when you use APA Standards
+   --Use italics when writing the title of your references in APA Standards
   end
 
 label01:show()
