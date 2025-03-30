@@ -22,7 +22,7 @@ label_02.fontsize=11
 local entry02= ui.Entry(win, "Año",(ancho/2),100-4,150,25)
 
 local title= ui.Label(win, "Titulo: ",(ancho/2)-100,150)
-title.font= "Roboto"
+title.font= "Roboto Italic"
 title.fontsize=11
 
 local entry03=ui.Entry(win, "Titulo",(ancho/2),150-4,150,25)
