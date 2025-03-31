@@ -107,6 +107,6 @@ label02_title.text=vacio
 label02_Editorial.text=vacio
 
 end
-label01:show()
+
 
 ui.run(win):wait()
