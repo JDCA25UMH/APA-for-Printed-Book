@@ -36,6 +36,24 @@ local entry04= ui.Entry(win, "Editorial", (ancho/2), 200-8,150,25)
 
 local button=ui.Button(win,"Cita APA para libro impreso", (ancho/2)-100, 250)
 
+
+local buttoneraser= ui.Button(win, "Borrar", (ancho/2)+100,250)
+
+panel= ui.Panel(win, (ancho/2)-250,300, 700, 700)
+panel.bgcolor= 0XFFFFFFFF
+
+label02_primer=ui.Label(panel, "", 0,0)
+label02_primer.font="Roboto"
+
+ label02_segundo=ui.Label(panel, "", 0, 0 )
+label02_segundo.font="Roboto"
+
+label02_title=ui.Label(panel, "", 0,0)
+label02_title.font="Roboto Italic"
+
+label02_Editorial= ui.Label(panel, "",0,0)
+label02_Editorial.font="Roboto"
+
 function button:onClick()
 text_primer= entry01.text
 
@@ -68,21 +86,31 @@ function extension(palabras)
   end
 extension(palabras)
 
-  local panel= ui.Panel(win, (ancho/2)-250,300, 700, 700)
-panel.bgcolor= 0XFFFFFFFF
-local label02_primer=ui.Label(panel, lettra, 0,0)
-label02_primer.font="Roboto"
-local label02_segundo=ui.Label(panel, string.format("(%s).", entry02.text),label02_primer.width+5 , 0 )
-label02_segundo.font="Roboto"
+    label02_primer.text = lettra
+ label02_segundo.text = string.format("(%s).", entry02.text)
+ label02_segundo.x = label02_primer.width + 5
+ label02_title.text = string.format(" %s.", entry03.text)
+ label02_title.x = label02_segundo.width + label02_primer.width + 5
+ label02_Editorial.text = string.format(" %s.", entry04.text)
+ label02_Editorial.x = label02_primer.width + label02_segundo.width + label02_title.width + 5
 
-local label02_title=ui.Label(panel, string.format(" %s.", entry03.text),label02_segundo.width +label02_primer.width+5 ,0)
-label02_title.font="Roboto Italic"
-
-local label02_Editorial= ui.Label(panel, string.format(" %s.", entry04.text), label02_primer.width+ label02_segundo.width+label02_title.width+5,0)
-  label02_Editorial.font="Roboto"
-   --Use italics when writing the title of your references in APA Standards
   end
 
+
+
+function buttoneraser:onClick()
+local vacio=""
+entry01.text=vacio
+entry02.text=vacio
+entry03.text=vacio
+entry04.text=vacio
+
+label02_primer.text=vacio
+label02_segundo.text=vacio
+label02_title.text=vacio
+label02_Editorial.text=vacio
+
+end
 label01:show()
 
 ui.run(win):wait()
