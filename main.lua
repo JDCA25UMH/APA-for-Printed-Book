@@ -78,7 +78,7 @@ label02_segundo.font="Roboto"
 local label02_title=ui.Label(panel, string.format(" %s.", entry03.text),label02_segundo.width +label02_primer.width+5 ,0)
 label02_title.font="Roboto Italic"
 
-local label02_Editorial= ui.Label(panel, string.format(" %s", entry04.text), label02_primer.width+ label02_segundo.width+label02_title.width+5,0)
+local label02_Editorial= ui.Label(panel, string.format(" %s.", entry04.text), label02_primer.width+ label02_segundo.width+label02_title.width+5,0)
   label02_Editorial.font="Roboto"
    --Use italics when writing the title of your references in APA Standards
   end
