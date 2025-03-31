@@ -67,21 +67,18 @@ function extension(palabras)
   
   end
 extension(palabras)
-texto_duo= entry02.text
-duo_comillas= string.format(" (%s). ", texto_duo)
 
-tres_format= string.format("%s.", entry03.text)
+  local panel= ui.Panel(win, (ancho/2)-250,300, 700, 700)
+panel.bgcolor= 0XFFFFFFFF
+local label02_primer=ui.Label(panel, lettra, 0,0)
+label02_primer.font="Roboto"
+local label02_segundo=ui.Label(panel, string.format("(%s).", entry02.text),label02_primer.width+5 , 0 )
+label02_segundo.font="Roboto"
 
-quatro_text= entry04.text
-quatro_format=string.format(" %s.", quatro_text)
+local label02_title=ui.Label(panel, string.format(" %s.", entry03.text),label02_segundo.width +label02_primer.width+5 ,0)
+label02_title.font="Roboto Italic"
 
-Referencia_Apa= lettra..duo_comillas..tres_format..quatro_format
-
-local label02=ui.Label(win, Referencia_Apa , (ancho/2)-200,300)
-
-label02:show()
-label02.cursor="arrow"
-label02.font="Roboto"
+local label02_Editorial= ui.Label(panel, string.format(" %s", entry04.text), label02_primer.width+ label02_segundo.width+label02_title.width+5,0)
    --Use italics when writing the title of your references in APA Standards
   end
 
